@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4oySt0rm</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <base target="_blank">
+<base target="_blank">
+</head>
+<body>
+    <!-- Audio Element -->
+    <audio id="bg-music" loop>
+        <source src="music/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Controls Bar - Now at Bottom -->
+    <div class="controls-bar">
+        <button class="control-btn" id="music-toggle" title="Toggle Music">
+            <i class="fas fa-music"></i>
+        </button>
+        <button class="control-btn" id="theme-toggle" title="Toggle Dark/Light Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Copied to clipboard!</div>
+
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Main Content Wrapper for Smooth Scroll -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- Navigation -->
+            <nav>
+                <div class="logo">L4oySt0rm</div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-anchor">Home</a></li>
+                    <li><a href="#about" class="nav-anchor">About</a></li>
+                    <li><a href="#services" class="nav-anchor">Services</a></li>
+                    <li><a href="#projects" class="nav-anchor">Projects</a></li>
+                    <li><a href="#skills" class="nav-anchor">Skills</a></li>
+                    <li><a href="#contact" class="nav-anchor">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="hero" id="home">
+                <div class="hero-content">
+                    <div class="availability-badge">
+                        <i class="fas fa-code"></i>
+                        Available for Freelance
+                    </div>
+
+                    <div class="typing-container">
+                        <span class="typing-greeting" id="greeting-text"></span>
+                    </div>
+
+                    <h1>I'm <span class="name-highlight">L4oySt0rm</span></h1>
+
+                    <div class="hero-role">
+                        I'm a professional <span class="role-text" id="role-text"></span>
+                        <span class="typing-cursor"></span>
+                    </div>
+
+                    <p class="hero-description">
+                        I am a developer who creates Minecraft servers and websites. I have been working on 
+                        Minecraft for 7 years and coding for 4 years. I want to improve my skills every day 
+                        and learn new technologies. I enjoy solving difficult problems and building systems 
+                        that help many players.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">7+</span>
+                            <span class="stat-label">Years Minecraft</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Years Coding</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#services" class="btn btn-primary nav-anchor">
+                            <i class="fas fa-rocket"></i>
+                            Hire Me
+                        </a>
+                        <a href="#projects" class="btn btn-secondary nav-anchor">
+                            <i class="fas fa-folder-open"></i>
+                            View Projects
+                        </a>
+                    </div>
+                </div>
+
+                <div class="floating-cards">
+                    <div class="float-card">
+                        <h3><i class="fas fa-cube"></i> Minecraft Developer</h3>
+                        <p>I create plugins and optimize servers. I work with Spigot, Paper, and BungeeCord.</p>
+                    </div>
+                    <div class="float-card">
+                        <h3><i class="fas fa-globe"></i> Web Developer</h3>
+                        <p>I build websites using React and Node.js. They work well on all devices.</p>
+                    </div>
+                    <div class="float-card">
+                        <h3><i class="fas fa-bolt"></i> Performance Optimizer</h3>
+                        <p>I write efficient code to reduce lag and improve server performance.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about" id="about">
+                <div class="about-container">
+                    <div class="about-visual reveal">
+                        <div class="profile-card">
+                            <div class="profile-content">
+                                <img src="img/icon.png" alt="L4oySt0rm" class="profile-image">
+                                <h3>L4oySt0rm</h3>
+                                <p class="profile-role">Digital Creator</p>
+                                <div class="profile-tags">
+                                    <span class="profile-tag">Problem Solver</span>
+                                    <span class="profile-tag">Minecraft Expert</span>
+                                    <span class="profile-tag">Web Developer</span>
+                                    <span class="profile-tag">Always Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-content reveal">
+                        <h2>About <span>Me</span></h2>
+                        <p class="about-text">
+                            I started with simple command blocks in Minecraft. Now I build large server networks 
+                            that can handle thousands of players. I learned Java because I wanted to create my 
+                            own plugins. I spend many nights coding and fixing bugs because I want to improve my skills.
+                        </p>
+                        <p class="about-text">
+                            I do not only work on Minecraft. I also develop websites. I learned HTML, CSS, and 
+                            JavaScript because many people need websites for their business. I try my best on 
+                            every project because I want to become a better developer.
+                        </p>
+
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="highlight-text">
+                                    <h4>Problem Solver</h4>
+                                    <p>I enjoy difficult challenges. I never give up.</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="highlight-text">
+                                    <h4>Community Builder</h4>
+                                    <p>I create places where players want to play.</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="highlight-text">
+                                    <h4>Performance Focus</h4>
+                                    <p>I hate lag. I write fast code.</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="highlight-text">
+                                    <h4>Innovation</h4>
+                                    <p>I always try new things. I do not like boring work.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="btn btn-primary nav-anchor">
+                            <i class="fas fa-paper-plane"></i>
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services">
+                <div class="section-header reveal">
+                    <h2>My <span>Services</span></h2>
+                    <p>I offer professional development services. I can help you with Minecraft servers or websites.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Minecraft Server Development</h3>
+                        <p>I can set up your server, create custom plugins, and fix lag issues. I work with 
+                        Spigot, Paper, and BungeeCord. I can help every week or for one-time projects.</p>
+                        <div class="price-tag">
+                            <span class="currency">$</span>
+                            <span class="amount">15</span>
+                            <span class="period">/week</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h3>Business Website</h3>
+                        <p>I create websites for online stores or companies. They work on mobile phones and computers. 
+                        I can add payment systems, login pages, and admin panels. Google can find your website easily.</p>
+                        <div class="price-tag">
+                            <span class="currency">$</span>
+                            <span class="amount">59</span>
+                            <span class="period">+</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Custom Private Plugin</h3>
+                        <p>I will create a plugin only for your server. No one else will have it. The code is 
+                        100% private and secure. You will own everything. I can update it when you need.</p>
+                        <div class="price-tag">
+                            <span class="currency">$</span>
+                            <span class="amount">95</span>
+                            <span class="period">+</span>
+                        </div>
+                        <div class="private-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            100% Private
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <div class="section-header reveal">
+                    <h2>My <span>Projects</span></h2>
+                    <p>These are the servers I am working on and the plugins I have made. Click the servers to copy the IP. Click the public plugins to visit their websites.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- MikitaMC - Biggest Network -->
+                    <div class="project-card reveal" onclick="copyIP('mikitamc.ink')">
+                        <div class="project-logo" style="background-image: url('img/mikita.png'); background-size: cover; background-position: center; position: relative;">
+                            <span class="project-type-badge" style="color: var(--primary); border-color: rgba(0, 240, 255, 0.3); position: absolute; top: 15px; right: 15px;">Public</span>
+                        </div>
+                        <h3>MikitaMC</h3>
+                        <p>This is my biggest network. Many players 
+                        play here every day. It has minigames, lobbies, and many connected servers. The economy 
+                        system is very big.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-network-wired"></i> Proxy Network</span>
+                            <span><i class="fas fa-coins"></i> Economy</span>
+                        </div>
+                        <div class="copy-hint">Click to copy IP</div>
+                    </div>
+
+                    <!-- Public Projects with Links -->
+                    <a href="https://angleguard.pro" target="_blank" class="project-card reveal" style="text-decoration: none; color: inherit;">
+                        <div class="project-logo" style="background-image: url('img/ag.png'); background-size: cover; background-position: center; position: relative;">
+                            <span class="project-type-badge" style="color: var(--primary); border-color: rgba(0, 240, 255, 0.3); position: absolute; top: 15px; right: 15px;">Public</span>
+                        </div>
+                        <h3>AngleGuard</h3>
+                        <p>This plugin protects servers from hackers. It detects cheats automatically and bans 
+                        bad players. Many servers use this plugin. Click to visit the website.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-shield-alt"></i> Security</span>
+                            <span><i class="fas fa-code"></i> Java</span>
+                        </div>
+                    </a>
+
+                    <a href="https://builtbybit.com/resources/magictools-advanced-custom-tools.60728/" target="_blank" class="project-card reveal" style="text-decoration: none; color: inherit;">
+                        <div class="project-logo" style="background-image: url('img/magic.png'); background-size: cover; background-position: center; position: relative;">
+                            <span class="project-type-badge" style="color: var(--primary); border-color: rgba(0, 240, 255, 0.3); position: absolute; top: 15px; right: 15px;">Public</span>
+                        </div>
+                        <h3>MagicTools</h3>
+                        <p>This plugin is for survival servers. It makes the game more fun. It has custom 
+                        enchantments and special items. Players like this plugin. Click to learn more.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-magic"></i> Gameplay</span>
+                            <span><i class="fas fa-code"></i> Java</span>
+                        </div>
+                    </a>
+
+                    <a href="https://builtbybit.com/resources/lroyworth.55059/" target="_blank" class="project-card reveal" style="text-decoration: none; color: inherit;">
+                        <div class="project-logo" style="background-image: url('img/lroyworth.png'); background-size: cover; background-position: center; position: relative;">
+                            <span class="project-type-badge" style="color: var(--primary); border-color: rgba(0, 240, 255, 0.3); position: absolute; top: 15px; right: 15px;">Public</span>
+                        </div>
+                        <h3>LroyWorth</h3>
+                        <p>This is a money system for servers. Players can buy and sell items. Prices change 
+                        automatically. The money is safe and cannot be duplicated. Click to visit the website.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-coins"></i> Economy</span>
+                            <span><i class="fas fa-code"></i> Java</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills">
+                <div class="section-header reveal">
+                    <h2>My <span>Skills</span></h2>
+                    <p>These are the technologies I know. I learned them by working on real projects.</p>
+                </div>
+
+                <div class="skills-container">
+                    <div class="skill-category reveal">
+                        <h3><i class="fas fa-cube"></i> Minecraft Development</h3>
+
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Plugin Development (Bukkit/Spigot/Paper)</span>
+                                <span>97%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="97"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Server Setup and Optimization</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="95"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>BungeeCord and Velocity</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="99"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category reveal">
+                        <h3><i class="fas fa-code"></i> Programming and Databases</h3>
+
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Java and Kotlin</span>
+                                <span>86%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="86"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Web Development (HTML/CSS/JS/React)</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="92"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>SQL, MongoDB, and HikariDB</span>
+                                <span>67%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="67"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <div class="section-header reveal">
+                    <h2>Contact <span>Me</span></h2>
+                    <p>Do you want to work together? Send me a message and I will reply quickly.</p>
+                </div>
+
+                <div class="contact-container">
+                    <div class="contact-info reveal">
+                        <h3>Get In Touch</h3>
+                        <p>
+                            I always check Discord and email. If you need help with a Minecraft server or a website, 
+                            just send me a message. I can do small fixes or big projects. Tell me what you need.
+                        </p>
+                        <div class="contact-links">
+                            <a href="#" class="contact-link" onclick="alert('Discord: L4oySt0rm'); return false;">
+                                <i class="fab fa-discord"></i>
+                                <div>
+                                    <span class="label">Discord (Best)</span>
+                                    <span class="value">L4oySt0rm</span>
+                                </div>
+                            </a>
+                            <a href="mailto:mfox404@gmail.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <span class="label">Email</span>
+                                    <span class="value">mfox404@gmail.com</span>
+                                </div>
+                            </a>
+                            <a href="https://t.me/mfox404" target="_blank" class="contact-link">
+                                <i class="fab fa-telegram"></i>
+                                <div>
+                                    <span class="label">Telegram</span>
+                                    <span class="value">@mfox404</span>
+                                </div>
+                            </a>
+                            <a href="https://github.com/L4oySt0rm" class="contact-link" onclick="alert('GitHub: L4oySt0rm'); return false;">
+                                <i class="fab fa-github"></i>
+                                <div>
+                                    <span class="label">GitHub</span>
+                                    <span class="value">L4oySt0rm</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-visual reveal">
+                        <div class="quick-facts">
+                            <h3>Information</h3>
+                            <div class="fact-row">
+                                <span class="fact-label">Reply Speed</span>
+                                <span class="fact-value primary">Less than 12 hours</span>
+                            </div>
+                            <div class="fact-row">
+                                <span class="fact-label">Work Status</span>
+                                <span class="fact-value accent">Available</span>
+                            </div>
+                            <div class="fact-row">
+                                <span class="fact-label">Time Zone</span>
+                                <span class="fact-value">UTC/GMT +7</span>
+                            </div>
+                            <div class="fact-row">
+                                <span class="fact-label">Languages</span>
+                                <span class="fact-value">English and Khmer</span>
+                            </div>
+                            <div class="fact-row">
+                                <span class="fact-label">Experience</span>
+                                <span class="fact-value">More than 7 years</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <p>2026 © <span>L4oySt0rm</span>. Create for introduce myself.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
