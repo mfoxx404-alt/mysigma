@@ -1,9 +1,7 @@
-// Theme Toggle
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 const themeIcon = themeToggle.querySelector('i');
 
-// Check for saved theme preference
 const savedTheme = localStorage.getItem('theme') || 'dark';
 body.setAttribute('data-theme', savedTheme);
 updateThemeIcon(savedTheme);
@@ -27,13 +25,11 @@ function updateThemeIcon(theme) {
     }
 }
 
-// Music Toggle
 const musicToggle = document.getElementById('music-toggle');
 const bgMusic = document.getElementById('bg-music');
 const musicIcon = musicToggle.querySelector('i');
 let isPlaying = false;
 
-// Try to autoplay (may be blocked by browser)
 window.addEventListener('load', () => {
     bgMusic.volume = 0.025; // Set volume to 2.5%
     const playPromise = bgMusic.play();
@@ -67,12 +63,10 @@ musicToggle.addEventListener('click', () => {
     }
 });
 
-// Random Greeting on Page Load
 const greetings = ['Wassup', 'Hello', 'Hey', 'Yooo', 'Hi there', 'Yo'];
 const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
 document.getElementById('greeting-text').textContent = randomGreeting + ',';
 
-// Role Typing Animation
 const roles = [
     'Minecraft Developer',
     'Web Developer',
@@ -116,7 +110,6 @@ function typeRole() {
 
 setTimeout(typeRole, 800);
 
-// Copy IP Function
 function copyIP(ip) {
     navigator.clipboard.writeText(ip).then(() => {
         const toast = document.getElementById('toast');
@@ -130,7 +123,6 @@ function copyIP(ip) {
     });
 }
 
-// Particle Background
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
 let width, height;
@@ -207,13 +199,12 @@ window.addEventListener('resize', () => {
     initParticles();
 });
 
-// Butter Smooth Scroll - Like Ice
 const wrapper = document.getElementById('smooth-wrapper');
 const content = document.getElementById('smooth-content');
 
 let currentY = 0;
 let targetY = 0;
-let ease = 0.03; // Very smooth, like ice
+let ease = 0.025;
 
 function smoothScroll() {
     targetY = window.scrollY;
@@ -227,12 +218,10 @@ function smoothScroll() {
     requestAnimationFrame(smoothScroll);
 }
 
-// Set body height to match content
 function setBodyHeight() {
     document.body.style.height = content.offsetHeight + 'px';
 }
 
-// Initialize
 setTimeout(() => {
     setBodyHeight();
     smoothScroll();
@@ -240,7 +229,6 @@ setTimeout(() => {
 
 window.addEventListener('resize', setBodyHeight);
 
-// Handle anchor clicks with smooth scroll
 document.querySelectorAll('.nav-anchor').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -250,13 +238,12 @@ document.querySelectorAll('.nav-anchor').forEach(anchor => {
             const targetPosition = target.offsetTop;
             window.scrollTo({
                 top: targetPosition,
-                behavior: 'auto' // We handle the smoothness
+                behavior: 'auto'
             });
         }
     });
 });
 
-// Scroll Reveal
 const reveals = document.querySelectorAll('.reveal');
 const revealOnScroll = () => {
     reveals.forEach(element => {
@@ -271,7 +258,6 @@ const revealOnScroll = () => {
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
 
-// Skill Bar Animation
 const skillFills = document.querySelectorAll('.skill-fill');
 const animateSkills = () => {
     skillFills.forEach(fill => {
@@ -284,7 +270,6 @@ const animateSkills = () => {
 window.addEventListener('scroll', animateSkills);
 setTimeout(animateSkills, 500);
 
-// 3D Tilt Effect
 document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
@@ -300,3 +285,37 @@ document.querySelectorAll('.service-card').forEach(card => {
         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
     });
 });
+
+(function() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    let progress = 0;
+    let loaded = false;
+    
+    document.body.classList.add('loading');
+    
+    function updateProgress() {
+        if (progress < 90 && !loaded) {
+            progress += Math.random() * 15;
+            if (progress > 90) progress = 90;
+            progressBar.style.width = progress + '%';
+            progressText.textContent = Math.round(progress) + '%';
+            setTimeout(updateProgress, 200);
+        }
+    }
+    
+    updateProgress();
+    
+    window.addEventListener('load', function() {
+        loaded = true;
+        progress = 100;
+        progressBar.style.width = '100%';
+        progressText.textContent = '100%';
+        setTimeout(function() {
+            loadingScreen.classList.add('hidden');
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        }, 500);
+    });
+})();

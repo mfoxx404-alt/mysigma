@@ -15,12 +15,21 @@
 <base target="_blank">
 </head>
 <body>
-    <!-- Audio Element -->
+
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-box">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading...</div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div class="progress-text" id="progress-text">0%</div>
+        </div>
+    </div>
     <audio id="bg-music" loop>
         <source src="music/music.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Controls Bar - Now at Bottom -->
     <div class="controls-bar">
         <button class="control-btn" id="music-toggle" title="Toggle Music">
             <i class="fas fa-music"></i>
@@ -30,17 +39,13 @@
         </button>
     </div>
 
-    <!-- Toast Notification -->
     <div class="toast" id="toast">Copied to clipboard!</div>
 
-    <!-- Background Canvas -->
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Main Content Wrapper for Smooth Scroll -->
     <div id="smooth-wrapper">
         <div id="smooth-content">
 
-            <!-- Navigation -->
             <nav>
                 <div class="logo">L4oySt0rm</div>
                 <ul class="nav-links">
@@ -53,7 +58,6 @@
                 </ul>
             </nav>
 
-            <!-- Hero Section -->
             <section class="hero" id="home">
                 <div class="hero-content">
                     <div class="availability-badge">
@@ -118,7 +122,6 @@
                 </div>
             </section>
 
-            <!-- About Section -->
             <section class="about" id="about">
                 <div class="about-container">
                     <div class="about-visual reveal">
@@ -128,10 +131,13 @@
                                 <h3>L4oySt0rm</h3>
                                 <p class="profile-role">Digital Creator</p>
                                 <div class="profile-tags">
-                                    <span class="profile-tag">Problem Solver</span>
-                                    <span class="profile-tag">Minecraft Expert</span>
-                                    <span class="profile-tag">Web Developer</span>
-                                    <span class="profile-tag">Always Learning</span>
+                                    <span class="profile-tag">Java</span>
+                                    <span class="profile-tag">Kothlin</span>
+                                    <span class="profile-tag">Python</span>
+                                    <span class="profile-tag">ReactJS</span>
+                                    <span class="profile-tag">Database</span>
+                                    <span class="profile-tag">Analysis</span>
+                                    <span class="profile-tag">Optimization</span>
                                 </div>
                             </div>
                         </div>
@@ -197,7 +203,6 @@
                 </div>
             </section>
 
-            <!-- Services Section -->
             <section id="services">
                 <div class="section-header reveal">
                     <h2>My <span>Services</span></h2>
@@ -253,7 +258,6 @@
                 </div>
             </section>
 
-            <!-- Projects Section -->
             <section id="projects">
                 <div class="section-header reveal">
                     <h2>My <span>Projects</span></h2>
@@ -261,7 +265,6 @@
                 </div>
 
                 <div class="projects-grid">
-                    <!-- MikitaMC - Biggest Network -->
                     <div class="project-card reveal" onclick="copyIP('mikitamc.ink')">
                         <div class="project-logo" style="background-image: url('img/mikita.png'); background-size: cover; background-position: center; position: relative;">
                             <span class="project-type-badge" style="color: var(--primary); border-color: rgba(0, 240, 255, 0.3); position: absolute; top: 15px; right: 15px;">Public</span>
@@ -277,7 +280,6 @@
                         <div class="copy-hint">Click to copy IP</div>
                     </div>
 
-                    <!-- Public Projects with Links -->
                     <a href="https://angleguard.pro" target="_blank" class="project-card reveal" style="text-decoration: none; color: inherit;">
                         <div class="project-logo" style="background-image: url('img/ag.png'); background-size: cover; background-position: center; position: relative;">
                             <span class="project-type-badge" style="color: var(--primary); border-color: rgba(0, 240, 255, 0.3); position: absolute; top: 15px; right: 15px;">Public</span>
@@ -319,7 +321,6 @@
                 </div>
             </section>
 
-            <!-- Skills Section -->
             <section id="skills">
                 <div class="section-header reveal">
                     <h2>My <span>Skills</span></h2>
@@ -397,7 +398,6 @@
                 </div>
             </section>
 
-            <!-- Contact Section -->
             <section id="contact">
                 <div class="section-header reveal">
                     <h2>Contact <span>Me</span></h2>
@@ -471,7 +471,6 @@
                 </div>
             </section>
 
-            <!-- Footer -->
             <footer>
                 <p>2026 © <span>L4oySt0rm</span>. Create for introduce myself.</p>
             </footer>

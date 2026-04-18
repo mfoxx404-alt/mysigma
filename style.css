@@ -12,7 +12,6 @@
     --card-bg: rgba(255, 255, 255, 0.03);
 }
 
-/* Light Mode Variables - Dark Blue Theme */
 [data-theme="light"] {
     --dark: #0f172a;
     --darker: #1e293b;
@@ -41,7 +40,73 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Controls Bar - Fixed Bottom Right */
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--darker);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.loading-box {
+    text-align: center;
+    padding: 40px;
+}
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(0, 240, 255, 0.1);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 30px;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.loading-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+.progress-container {
+    width: 250px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0 auto 15px;
+}
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+.progress-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+body.loading { overflow: hidden; }
+body.loading #smooth-wrapper { opacity: 0; }
+body.loaded #smooth-wrapper { opacity: 1; transition: opacity 0.5s ease; }
+
 .controls-bar {
     position: fixed;
     bottom: 20px;
@@ -84,7 +149,6 @@ body {
     50% { box-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent); }
 }
 
-/* Smooth Scroll Container */
 #smooth-wrapper {
     position: fixed;
     top: 0;
@@ -97,7 +161,6 @@ body {
     will-change: transform;
 }
 
-/* Background Canvas */
 #bg-canvas {
     position: fixed;
     top: 0;
@@ -109,7 +172,6 @@ body {
     pointer-events: none;
 }
 
-/* Navigation */
 nav {
     position: fixed;
     top: 0;
@@ -179,7 +241,6 @@ nav {
     width: 100%;
 }
 
-/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -325,7 +386,6 @@ nav {
     background: var(--glass);
 }
 
-/* Floating Elements */
 .floating-cards {
     position: absolute;
     right: 5%;
@@ -397,7 +457,6 @@ nav {
     color: var(--text-muted);
 }
 
-/* About Section */
 .about {
     padding: 120px 10%;
     position: relative;
@@ -556,7 +615,6 @@ nav {
     font-size: 0.85rem;
 }
 
-/* Section Styles */
 section {
     padding: 120px 10%;
     position: relative;
@@ -585,7 +643,6 @@ section {
     margin: 0 auto;
 }
 
-/* Services Grid */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -702,7 +759,6 @@ section {
     font-weight: 600;
 }
 
-/* Projects Section */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -835,7 +891,6 @@ section {
     opacity: 1;
 }
 
-/* Skills Matrix */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -906,7 +961,6 @@ section {
     100% { transform: translateX(100%); }
 }
 
-/* Contact Section */
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -979,7 +1033,6 @@ section {
     font-size: 1.1rem;
 }
 
-/* Quick Facts Card */
 .quick-facts {
     background: var(--glass);
     border: 1px solid var(--glass-border);
@@ -1020,7 +1073,6 @@ section {
 .fact-value.primary { color: var(--primary); }
 .fact-value.accent { color: var(--accent); }
 
-/* Footer */
 footer {
     padding: 40px 10%;
     text-align: center;
@@ -1037,7 +1089,6 @@ footer span {
     font-weight: 600;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
     .floating-cards {
         display: none;
@@ -1096,7 +1147,6 @@ footer span {
     }
 }
 
-/* Scroll Animations */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -1108,7 +1158,6 @@ footer span {
     transform: translateY(0);
 }
 
-/* Availability Badge */
 .availability-badge {
     display: inline-flex;
     align-items: center;
@@ -1136,7 +1185,6 @@ footer span {
     50% { opacity: 0.5; }
 }
 
-/* Toast Notification */
 .toast {
     position: fixed;
     bottom: 80px;
