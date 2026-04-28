@@ -1223,6 +1223,10 @@ footer span {
         display: block;
     }
 
+    .availability-badge {
+        margin-top: 120px;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
